@@ -31,6 +31,7 @@ class BookingCalendarMain extends StatefulWidget {
     this.gridScrollPhysics,
     this.loadingWidget,
     this.errorWidget,
+    this.calendarPadding,
   }) : super(key: key);
 
   final Stream<dynamic>? Function({required DateTime start, required DateTime end}) getBookingStream;
@@ -53,6 +54,7 @@ class BookingCalendarMain extends StatefulWidget {
   final ScrollPhysics? gridScrollPhysics;
   final Widget? loadingWidget;
   final Widget? errorWidget;
+  final EdgeInsets? calendarPadding;
 
   @override
   State<BookingCalendarMain> createState() => _BookingCalendarMainState();
@@ -104,6 +106,7 @@ class _BookingCalendarMainState extends State<BookingCalendarMain> {
     return Column(
       children: [
         CommonCard(
+          padding: widget.calendarPadding,
           child: TableCalendar(
             firstDay: DateTime.now(),
             lastDay: DateTime.now().add(const Duration(days: 1000)),
