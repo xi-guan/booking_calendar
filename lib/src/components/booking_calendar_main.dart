@@ -156,6 +156,9 @@ class _BookingCalendarMainState extends State<BookingCalendarMain> {
                 physics: widget.gridScrollPhysics ?? const BouncingScrollPhysics(),
                 itemCount: controller.allBookingSlots.length,
                 itemBuilder: (context, index) => BookingSlot(
+                  bookedSlotColor: widget.bookedSlotColor,
+                  selectedSlotColor: widget.selectedSlotColor,
+                  availableSlotColor: widget.availableSlotColor,
                   isBooked: controller.isSlotBooked(index),
                   isSelected: index == controller.selectedSlot,
                   onTap: () => controller.selectSlot(index),
