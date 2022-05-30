@@ -26,6 +26,7 @@ class BookingCalendar extends StatelessWidget {
     this.gridScrollPhysics,
     this.loadingWidget,
     this.errorWidget,
+    this.calendarPadding,
   }) : super(key: key);
 
   ///for the Calendar picker we use: [TableCalendar]
@@ -93,6 +94,8 @@ class BookingCalendar extends StatelessWidget {
   ///Display your custom error widget if any error recurred while fetching data from [Stream]
   final Widget? errorWidget;
 
+  final EdgeInsets? calendarPadding;
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -117,6 +120,7 @@ class BookingCalendar extends StatelessWidget {
         gridScrollPhysics: gridScrollPhysics,
         loadingWidget: loadingWidget,
         errorWidget: errorWidget,
+        calendarPadding: calendarPadding,
       ),
     );
   }
